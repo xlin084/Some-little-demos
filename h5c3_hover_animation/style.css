@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #333;
+}
+
+.navigation {
+  position: relative;
+  width: 350px;
+  height: 100px;
+}
+
+.navigation ul {
+  display: flex;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+  text-align: center;
+}
+
+.navigation ul li a .icon {
+  /* position: relative; */
+  line-height: 75px;
+  transition: 0.15s;
+  font-size: 50px;
+  margin: 20px;
+}
+
+.navigation ul li.active a .icon {
+  font-size: 30px;
+  transform: translateY(-6px);
+  margin-bottom: 5px;
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  font-size: 12px;
+  color: #ffffff;
+  bottom: 20px;
+  font-weight: 400;
+  transition: 0.25s;
+  transform: scale(0);
+}
+
+.navigation ul li:hover a .text {
+  transform: scale(1);
+}
+
+.indicator {
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 100px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+  background: rgb(29, 155, 240);
+  box-shadow: 0 15px 5px rgba(29, 155, 240, 0.4);
+  transform: translateX(calc(90px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+  background: rgb(255, 0, 0);
+  box-shadow: 0 15px 5px rgba(255, 0, 0, 0.4);
+  transform: translateX(calc(90px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+  background: rgb(7, 193, 96);
+  box-shadow: 0 15px 5px rgba(7, 193, 96, 0.4);
+  transform: translateX(calc(90px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+  background: rgb(0, 118, 180);
+  box-shadow: 0 15px 5px rgb(0, 118, 180, 0.4);
+  transform: translateX(calc(90px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+  background: rgb(153, 153, 153);
+  box-shadow: 0 15px 5px rgb(153, 153, 153, 0.4);
+  transform: translateX(calc(90px * 4));
+}
