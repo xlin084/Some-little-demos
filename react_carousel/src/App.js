@@ -46,8 +46,7 @@ const App = () => {
         style={{
           width: `${image.length * 100}%`, // css不知道会有多少张图片，所以要动态计算
           transform: `translateX(-${(100 * slider) / image.length}%)`, // 根据当前的slider计算出当前的位置
-        }}
-      >
+        }}>
         {image.map((src) => {
           return (
             <img
