@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Switch</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge" />
+    <meta name="Switch"
+          content="Element UI Switch in my way" />
+    <style>
+        .offscreen {
+            display: none;
+
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background: #bfbfbf;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        input[type="checkbox"]:checked+.switch::after {
+            transform: translateX(20px);
+        }
+
+        input[type="checkbox"]:checked+.switch {
+            background: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>123123</p>
+    <input type="checkbox"
+           id="toggle"
+           class="offscreen" />
+    <label for="toggle"
+           class="switch"></label>
+</body>
+
+</html>
