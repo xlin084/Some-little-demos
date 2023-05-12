@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 100px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #333333
+        }
+
+        .title span {
+            background: linear-gradient(to right, #f64232, #26d1b7) no-repeat right bottom;
+            background-size: 0 5px;
+            transition: background-size .3s ease-in-out;
+        }
+
+        .title span:hover {
+            background-position-x: left;
+            background-size: 100% 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title"><span>1234567890</span></h1>
+</body>
+
+</html>
