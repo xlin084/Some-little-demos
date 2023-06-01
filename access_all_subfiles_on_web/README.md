@@ -1,0 +1,1 @@
+This demo allows the user to get access to all sub-folders and sub-files in a selected directory.

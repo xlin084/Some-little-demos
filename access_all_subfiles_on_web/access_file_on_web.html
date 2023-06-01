@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Access all files on web</title>
+</head>
+
+<body>
+    <button>Select Folder</button>
+    <p>please open console to see the result</p>
+
+    <script>
+        const btn = document.querySelector('button');
+
+        // get the folder information
+        btn.onclick = async function () {
+            try {
+                // open the folder picker
+                const handle = await showDirectoryPicker();
+                const root = await processHandler(handle);
+                console.log(root);
+            } catch (error) {
+                // when user cancels the dialog box
+                console.log(error);
+            }
+        }
+
+        async function processHandler(handle) {
+            // create a new property called children
+            handle.children = [];
+
+            // if the handle is a file, return the handle
+            if (handle.kind === 'file') {
+                return handle;
+            }
+
+            // if the handle is a folder, get the entries
+            const iter = handle.entries();
+
+            // iterate through the entries
+            for await (const item of iter) {
+                // recursive call to make sure all the sub-folders and sub-files are processed
+                handle.children.push(await processHandler(item[1]));
+            }
+            return handle;
+        }
+    </script>
+</body>
+
+</html>
