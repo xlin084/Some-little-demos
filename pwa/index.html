@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=, initial-scale=1.0">
+    <link rel="manifest"
+          href="manifest.json">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>PWA Test</h1>
+    <!-- 在网页端添加PWA -->
+    <button id="btn"
+            style="display: none;"
+            onclick="pwaEvent.prompt()">add PWA</button>
+
+    <script>
+        let pwaEvent = null;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            pwaEvent = e;
+            btn.style.display = 'block';
+
+            pwaEvent.userChoice.then((choiceResult) => {
+                console.log(choiceResult.outcome);
+            });
+        });
+    </script>
+
+</html>

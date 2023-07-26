@@ -1,0 +1,12 @@
+{
+  "name": "PWA TEST",
+  "display": "standalone",
+  "start_url": "/.pwa.html",
+  "icons": [
+    {
+      "src": "/bookmark.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }
+  ]
+}
